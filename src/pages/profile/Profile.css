@@ -1,0 +1,93 @@
+.profileContainer {
+    /* background-color: blueviolet; */
+    min-height: 100vh;
+}
+
+.contentWrapper {
+    /* background-color: red; */
+    margin-left: 150px;
+    margin-top: 30px;
+    /* background-color: aqua; */
+
+}
+
+.cardContainer {
+    margin-top: 20px;
+    background-color: rgb(224, 238, 250);
+    /* background-color: rgb(176, 215, 250); */
+    height: 250px;
+    width: 600px;
+    border-radius: 10px;
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: 250px auto;
+
+}
+
+.usercardItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: blue; */
+  
+}
+
+.userImage {
+    height: 220px;
+    width: 220px;
+    /* background-color: transparent; */
+    opacity: 0.2;
+    margin-bottom: 30px;
+}
+.cardItem {
+    padding-top: 20px;
+}
+
+.username {
+    font-size: 20px;
+    margin: 20px 25px;
+}
+
+.userData {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.userTxt {
+    margin-left: 10px;
+}
+
+.tableContainer {
+    width: 70%;
+    height: 90px;
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: auto auto auto;
+    /* background-color: red; */
+}
+
+.tableData {
+    /* background-color: yellow; */
+    margin-top: 5px;
+    border: 0.5px solid #309b9b;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    background-color: #309b9b;
+    padding: 10px 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.headerData {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+    padding: 14px 0;
+}
+

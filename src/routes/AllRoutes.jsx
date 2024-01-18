@@ -8,6 +8,7 @@ import Assignment from '../pages/assigenments/Assigenment'
 import Submission from '../pages/submissions/Submission'
 import PrivateRoute from './PrivateRoute'
 import ErrorPage from '../components/ErrorPage'
+import Admin from '../pages/Admin'
 
 
 function AllRoutes() {
@@ -20,6 +21,7 @@ function AllRoutes() {
         <Route path='/' element={<Profile />} />
         <Route path='/assignment' element={<Assignment />} />
         <Route path='/submission' element={<Submission />} />
+        <Route path='/admin' element={<Admin />}/>
       </Route>
       <Route path='*' element={<ErrorPage />} />
     </Routes>

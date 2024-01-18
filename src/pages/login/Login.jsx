@@ -57,16 +57,23 @@ function Login() {
       });
 
       const token = 12345;
+
       localStorage.setItem('token', token);
-  
+
       if (response.status === 200) {
         console.log('Login successful');
-        navigate("/");
+        const role = localStorage.getItem('role');
+
+        if (role === 'admin') {
+          navigate('/admin');
+        } else {
+          navigate('/');
+        }
       } else {
         console.log('Login failed:', response.data);
-  
+
         setEmailError('Invalid email or password');
-  
+
         setPasswordError('Invalid email or password');
       }
     } catch (error) {

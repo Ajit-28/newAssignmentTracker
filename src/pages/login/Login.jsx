@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 import './Login.css';
 import EmailIcon from '@mui/icons-material/Email';
 import LockIcon from '@mui/icons-material/Lock';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '../../common/Header';
+import axios from 'axios';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
+  let navigate = useNavigate();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -19,34 +21,63 @@ function Login() {
     setPassword(e.target.value);
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-  
+
     // Validate email and password
     let hasError = false;
-  
+
     if (!email) {
       setEmailError('Email is required');
       hasError = true;
     } else {
       setEmailError('');
     }
-  
+
     if (!password) {
       setPasswordError('Password is required');
       hasError = true;
     } else {
       setPasswordError('');
     }
-  
+
     if (hasError) {
       // If there is any error, do not proceed with the login logic
       return;
     }
-    setEmail('');
-    setPassword('');
-  };
+
+    try {
+      const response = await axios.post("http://localhost:8080/v1/api/login", {
+        email: email,
+        password: password,
+      }, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      const token = 12345;
+      localStorage.setItem('token', token);
   
+      if (response.status === 200) {
+        console.log('Login successful');
+        navigate("/");
+      } else {
+        console.log('Login failed:', response.data);
+  
+        setEmailError('Invalid email or password');
+  
+        setPasswordError('Invalid email or password');
+      }
+    } catch (error) {
+      console.error('Login failed:', error);
+
+      setEmailError('Login failed. Please try again.');
+
+      setPasswordError('Login failed. Please try again.');
+    }
+  };
+
   return (
     <div className='LoginContainer'>
       <Header />

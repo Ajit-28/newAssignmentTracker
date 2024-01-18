@@ -11,11 +11,12 @@ import ErrorPage from '../components/ErrorPage'
 
 
 function AllRoutes() {
+  const isLoggedIn = localStorage.getItem('token') !== null;
   return (
     <Routes>
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Signup />} />
-      <Route element={<PrivateRoute isLoggedIn={true} />}>
+      <Route element={<PrivateRoute isLoggedIn={isLoggedIn} />}>
         <Route path='/' element={<Profile />} />
         <Route path='/assignment' element={<Assignment />} />
         <Route path='/submission' element={<Submission />} />

@@ -1,0 +1,76 @@
+.assigenmentContainer {
+    /* background-color: red; */
+    min-height: 100vh;
+}
+
+.dataContent {
+    margin: 40px 60px;
+}
+
+
+
+table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table td,
+table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    /* text-align: center; */
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+customers tr:hover {
+    background-color: #ddd;
+}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: rgb(198, 195, 195);
+    color: rgb(67, 66, 66);
+}
+
+.filterContainer {
+    /* background-color: red; */
+    display: flex;
+}
+
+.searchbar {
+    margin: 20px 0 20px auto;
+    font-size: 17px;
+    font-weight: bold;
+   
+}
+.input {
+    height: 20px;
+}
+.footer{
+    display: flex;
+    margin-top: 10px;
+}
+
+.btnContainer {
+   margin-left: auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.btn {
+    margin: 0 10px;
+    width: 100px;
+    height: 25px;
+    font-size: 14px;
+}
+
+.rowPerPage{
+    margin:  5px;
+}
